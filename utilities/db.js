@@ -4,7 +4,6 @@ const { getSecretValue } = require('./secrets');
 const connectDB = async () => {
   try {
       let secret = await getSecretValue();
-      console.log('secret', secret);
     
       secret = JSON.parse(secret);
       const mongourl = secret['MONGODB_URL']; // Updated key to match the secret object
