@@ -5,6 +5,11 @@ provider:
   runtime: nodejs20.x
   stage: dev
   region: ap-south-1
+  iamRoleStatements:
+  - Effect: Allow
+    Action:
+      - secretsmanager:GetSecretValue
+    Resource: arn:aws:secretsmanager:ap-south-1:851725421815:secret:todo-app-yt-secret-Fe4yhD
   # environment:
   #   MONGODB_URI: ${env:MONGODB_URI}
   # vpc:
