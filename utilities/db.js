@@ -6,7 +6,6 @@ const connectDB = async () => {
       let secret = await getSecretValue();
       secret = JSON.parse(secret);
       const mongourl = secret['MONGODB_URL']; // Updated key to match the secret object
-      console.log('mongourl', mongourl);
     await mongoose.connect(mongourl);
     console.log('MongoDB connected successfully');
   } catch (err) {
