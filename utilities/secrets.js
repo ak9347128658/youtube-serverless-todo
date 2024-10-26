@@ -9,10 +9,10 @@ const secretManager = new AWS.SecretsManager();
 
 async function getSecretValue() {
   try {
-    const data = await secretManager.getSecretValue({ SecretId: "todo-app-secret-dev" }).promise();
+    const data = await secretManager.getSecretValue({ SecretId: "todo-app-yt-secret" }).promise();
     if ('SecretString' in data) {
       return data.SecretString;
-      
+
     } else {
       // If the secret is stored using a binary format, convert it to a string
       let buff = Buffer.from(data.SecretBinary, 'base64');
